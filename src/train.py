@@ -21,7 +21,7 @@ def train_model():
         mlflow.log_metric("accuracy", acc)
         mlflow.sklearn.log_model(model, "model")
 
-        # ✅ Ensure 'models/' directory exists before saving
+        # ✅ Ensure 'models/' directory exists before saving.
         os.makedirs("models", exist_ok=True)
         joblib.dump(model, "models/model.pkl")
 
