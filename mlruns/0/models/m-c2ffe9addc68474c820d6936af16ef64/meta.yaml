@@ -1,0 +1,10 @@
+artifact_location: file:///F:/ML-OPS/ml-ops-iris-project/mlruns/0/models/m-c2ffe9addc68474c820d6936af16ef64/artifacts
+creation_timestamp: 1756132453728
+experiment_id: '0'
+last_updated_timestamp: 1756132465379
+model_id: m-c2ffe9addc68474c820d6936af16ef64
+model_type: null
+name: model
+source_run_id: 083915ae2aa04491b8cef0471acb6b63
+status: 2
+status_message: null
