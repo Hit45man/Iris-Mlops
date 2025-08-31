@@ -1,8 +1,7 @@
 import mlflow
 from mlflow.tracking import MlflowClient
 
-# Use local file-based tracking for CI/CD
-mlflow.set_tracking_uri("./mlruns")
+# Tracking URI will be set via environment variable
 client = MlflowClient()
 
 try:
