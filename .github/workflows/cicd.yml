@@ -8,6 +8,7 @@ env:
       IMAGE_NAME: iris-rf
       IMAGE_TAG: latest
       DOCKER_REPO: rohikam/iris-rf
+      MLFLOW_TRACKING_URI: ./mlruns
 
 jobs:
   model_training_registering:
