@@ -1,0 +1,14 @@
+artifact_uri: file:///F:/ML-OPS/new-mlops/mlruns/0/15919c2115954d4093be3017b766b0f2/artifacts
+end_time: 1756467171604
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 15919c2115954d4093be3017b766b0f2
+run_name: polite-goat-515
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756467171249
+status: 4
+tags: []
+user_id: Admin

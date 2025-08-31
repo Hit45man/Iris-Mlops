@@ -1,0 +1,6 @@
+artifact_location: file:///F:/ML-OPS/new-mlops/mlruns/331602030009031084
+creation_time: 1756466720038
+experiment_id: '331602030009031084'
+last_update_time: 1756466720038
+lifecycle_stage: active
+name: iris_experiment

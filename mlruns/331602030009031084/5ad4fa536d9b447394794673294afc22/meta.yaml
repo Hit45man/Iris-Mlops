@@ -1,0 +1,14 @@
+artifact_uri: file:///F:/ML-OPS/new-mlops/mlruns/331602030009031084/5ad4fa536d9b447394794673294afc22/artifacts
+end_time: 1756466735839
+entry_point_name: ''
+experiment_id: '331602030009031084'
+lifecycle_stage: active
+run_id: 5ad4fa536d9b447394794673294afc22
+run_name: rf_run
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756466720659
+status: 3
+tags: []
+user_id: Admin

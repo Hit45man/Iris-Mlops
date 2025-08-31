@@ -1,6 +1,6 @@
-artifact_location: file:///F:/ML-OPS/ml-ops-iris-project/mlruns/0
-creation_time: 1756132452633
+artifact_location: file:///F:/ML-OPS/new-mlops/mlruns/0
+creation_time: 1756466719865
 experiment_id: '0'
-last_update_time: 1756132452633
+last_update_time: 1756466719865
 lifecycle_stage: active
 name: Default
