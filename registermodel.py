@@ -2,6 +2,7 @@ import mlflow
 from mlflow.tracking import MlflowClient
 
 # Tracking URI will be set via environment variable
+mlflow.set_tracking_uri("file:./mlruns")
 client = MlflowClient()
 
 try:

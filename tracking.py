@@ -5,7 +5,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-# Tracking URI will be set via environment variable
+# Use local file-based tracking for CI/CD
+mlflow.set_tracking_uri("file:./mlruns")
 
 mlflow.set_experiment("iris_experiment")
 
