@@ -1,0 +1,14 @@
+artifact_uri: file:///F:/ML-OPS/ml-ops-iris-project/mlruns/478686625060519871/6edcac2c4d0b4293a48a351f0f572468/artifacts
+end_time: 1756464533062
+entry_point_name: ''
+experiment_id: '478686625060519871'
+lifecycle_stage: active
+run_id: 6edcac2c4d0b4293a48a351f0f572468
+run_name: delicate-bass-650
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756464521258
+status: 3
+tags: []
+user_id: Admin

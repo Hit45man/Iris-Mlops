@@ -18,8 +18,8 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/mlops-iris:latest .
-        docker push ${{ secrets.DOCKER_USERNAME }}/mlops-iris:latest
+        docker build -t rohikam/mlops-iris:latest .
+        docker push rohikam/mlops-iris:latest
 
     - name: Set up Kubeconfig
       uses: azure/setup-kubectl@v3
@@ -31,5 +31,5 @@ jobs:
         echo "${{ secrets.EKS_KUBECONFIG }}" > $HOME/.kube/config
     - name: Deploy to Kubernetes
       run: |
-        kubectl apply -f deployment/k8s-deployment.yaml
-        kubectl apply -f deployment/k8s-service.yaml
+        kubectl apply -f deployment/k8s-deploy.yml
+        kubectl apply -f deployment/service.yml

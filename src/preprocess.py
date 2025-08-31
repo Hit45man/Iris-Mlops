@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-def load_and_split(path='data/iris.csv'):
+def load_and_split(path='../data/iris.csv'):
     df = pd.read_csv(path)
     X = df.drop(columns='target')
     y = df['target']

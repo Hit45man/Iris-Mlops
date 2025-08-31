@@ -1,0 +1,14 @@
+artifact_uri: file:///F:/ML-OPS/ml-ops-iris-project/mlruns/478686625060519871/1c144f23f68042a08b99056404f11527/artifacts
+end_time: 1756465173379
+entry_point_name: ''
+experiment_id: '478686625060519871'
+lifecycle_stage: active
+run_id: 1c144f23f68042a08b99056404f11527
+run_name: blushing-snake-613
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756465172519
+status: 4
+tags: []
+user_id: Admin
