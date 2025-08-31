@@ -10,7 +10,7 @@ env:
       DOCKER_REPO: rohikam/iris-rf
 
 jobs:
-  install-dependencies:
+  model_training_registering:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,12 +26,7 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install mlflow scikit-learn pandas
-
-  model_training_registering:
-    runs-on: ubuntu-latest
-    needs: install-dependencies
-    
-    steps:    
+        
     - name: Run MLflow Training & Register Model
       run: |
         python tracking.py
