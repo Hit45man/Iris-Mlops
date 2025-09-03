@@ -4,9 +4,18 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
+import os
 
-# Use local file-based tracking for CI/CD
-mlflow.set_tracking_uri("file:./mlruns")
+# Set tracking uri to absolute path in current directory 
+tracking_uri = f"file://{os.path.abspath('./mlruns')}"
+mlflow.set_tracking_uri(tracking_uri)
+print(f"Mlflow tracking URI: {tracking_uri}")
+client = MlflowClient()
+print(f"Current working directory:{os.getcwd()}")
+print(f"MLruns directory exists:{os.path.exists('./mlruns')}")
+if not os.path.exists('./mlruns'):
+    print("Creating mlruns directory")
+    os.makedirs('./mlruns',exist_ok=True)
 
 mlflow.set_experiment("iris_experiment")
 
