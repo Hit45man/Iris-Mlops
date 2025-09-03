@@ -4,17 +4,13 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
-import tempfile
+
 import os
 
 
-# Create a temporary directory for MLflow
-temp_dir = tempfile.mkdtemp()
-mlruns_path = os.path.join(temp_dir, "mlruns")
-os.makedirs(mlruns_path, exist_ok=True)
-
-
 # Set MLflow tracking URI to local directory
+mlruns_path = "./mlruns"
+os.makedirs(mlruns_path, exist_ok=True)
 mlflow.set_tracking_uri(mlruns_path)
 print(f"MLflow tracking URI: {mlruns_path}")
 print(f"Current working directory: {os.getcwd()}")

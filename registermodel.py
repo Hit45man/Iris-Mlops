@@ -1,14 +1,11 @@
 import mlflow
 from mlflow.tracking import MlflowClient
-import tempfile
+
 import os
 
-# Create a temporary directory for MLflow
-temp_dir = tempfile.mkdtemp()
-mlruns_path = os.path.join(temp_dir, "mlruns")
+# Set MLflow tracking URI to local directory
+mlruns_path = "./mlruns"
 os.makedirs(mlruns_path, exist_ok=True)
-
-# Set MLflow tracking URI
 mlflow.set_tracking_uri(mlruns_path)
 client = MlflowClient()
 
