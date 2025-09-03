@@ -7,9 +7,16 @@ from sklearn.metrics import accuracy_score
 import tempfile
 import os
 
+
+# Create a temporary directory for MLflow
+temp_dir = tempfile.mkdtemp()
+mlruns_path = os.path.join(temp_dir, "mlruns")
+os.makedirs(mlruns_path, exist_ok=True)
+
+
 # Set MLflow tracking URI to local directory
-mlflow.set_tracking_uri("http://127.0.0.1:5000")
-print(f"MLflow tracking URI: http://127.0.0.1:5000")
+mlflow.set_tracking_uri(mlruns_path)
+print(f"MLflow tracking URI: {mlruns_path}")
 print(f"Current working directory: {os.getcwd()}")
 
 mlflow.set_experiment("iris_experiment")
