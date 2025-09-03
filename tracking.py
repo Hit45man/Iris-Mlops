@@ -4,24 +4,18 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
-from mlflow.tracking import MlflowClient
+import tempfile
 import os
 
-# Clear any existing MLflow environment variables
-for key in list(os.environ.keys()):
-    if key.startswith('MLFLOW_'):
-        del os.environ[key]
+# Create a temporary directory for MLflow
+temp_dir = tempfile.mkdtemp()
+mlruns_path = os.path.join(temp_dir, "mlruns")
+os.makedirs(mlruns_path, exist_ok=True)
 
-# Set tracking uri to current working directory
-tracking_uri = os.path.join(os.getcwd(), "mlruns")
-mlflow.set_tracking_uri(f"file://{tracking_uri}")
-print(f"Mlflow tracking URI: file://{tracking_uri}")
-client = MlflowClient()
-print(f"Current working directory:{os.getcwd()}")
-print(f"MLruns directory exists:{os.path.exists('./mlruns')}")
-if not os.path.exists(tracking_uri):
-    print(f"Creating mlruns directory at {tracking_uri}")
-    os.makedirs(tracking_uri, exist_ok=True)
+# Set MLflow tracking URI
+mlflow.set_tracking_uri(mlruns_path)
+print(f"MLflow tracking URI: {mlruns_path}")
+print(f"Current working directory: {os.getcwd()}")
 
 mlflow.set_experiment("iris_experiment")
 
@@ -36,4 +30,4 @@ with mlflow.start_run(run_name="rf_run3"):
     
     mlflow.log_param("n_estimators", 100)
     mlflow.log_metric("accuracy", acc)
-    mlflow.sklearn.log_model(model, artifact_path="model")
+    mlflow.sklearn.log_model(model, "model")
