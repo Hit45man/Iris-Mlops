@@ -1,9 +1,17 @@
 import mlflow
 from mlflow.tracking import MlflowClient
+import os
 
-# Tracking URI will be set via environment variable
-mlflow.set_tracking_uri("file:./mlruns")
+# Set tracking uri to absolute path in current directory 
+tracking_uri = f"file://{os.path.abspath('./mlruns')}"
+mlflow.set_tracking_uri(tracking_uri)
+print(f"Mlflow tracking URI: {tracking_uri}")
 client = MlflowClient()
+print(f"Current working directory:{os.getcwd()}")
+print(f"MLruns directory exists:{os.path.exists('./mlruns')}")
+if not os.path.exists('./mlruns'):
+    print("Creating mlruns directory")
+    os.makedirs('./mlruns',exist_ok=True)
 
 try:
     # Get the latest run from the iris_experiment
