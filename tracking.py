@@ -1,5 +1,4 @@
 import mlflow
-import mlflow.sklearn
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -28,4 +27,4 @@ with mlflow.start_run(run_name="rf_run3"):
     
     mlflow.log_param("n_estimators", 100)
     mlflow.log_metric("accuracy", acc)
-    mlflow.sklearn.log_model(model, "model")
+    print(f"Model trained with accuracy: {acc}")
