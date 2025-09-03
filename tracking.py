@@ -9,7 +9,7 @@ import os
 
 # Set MLflow tracking URI to local directory
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
-print(f"MLflow tracking URI: {mlruns_path}")
+print(f"MLflow tracking URI: http://127.0.0.1:5000")
 print(f"Current working directory: {os.getcwd()}")
 
 mlflow.set_experiment("iris_experiment")
