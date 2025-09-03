@@ -1,8 +1,15 @@
 import mlflow
 from mlflow.tracking import MlflowClient
+import tempfile
 import os
 
-mlflow.set_tracking_uri("http://127.0.0.1:5000")
+# Create a temporary directory for MLflow
+temp_dir = tempfile.mkdtemp()
+mlruns_path = os.path.join(temp_dir, "mlruns")
+os.makedirs(mlruns_path, exist_ok=True)
+
+# Set MLflow tracking URI
+mlflow.set_tracking_uri(mlruns_path)
 client = MlflowClient()
 
 try:
