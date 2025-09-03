@@ -7,16 +7,21 @@ from sklearn.metrics import accuracy_score
 from mlflow.tracking import MlflowClient
 import os
 
-# Set tracking uri to relative path
-tracking_uri = "./mlruns"
-mlflow.set_tracking_uri(tracking_uri)
-print(f"Mlflow tracking URI: {tracking_uri}")
+# Clear any existing MLflow environment variables
+for key in list(os.environ.keys()):
+    if key.startswith('MLFLOW_'):
+        del os.environ[key]
+
+# Set tracking uri to current working directory
+tracking_uri = os.path.join(os.getcwd(), "mlruns")
+mlflow.set_tracking_uri(f"file://{tracking_uri}")
+print(f"Mlflow tracking URI: file://{tracking_uri}")
 client = MlflowClient()
 print(f"Current working directory:{os.getcwd()}")
 print(f"MLruns directory exists:{os.path.exists('./mlruns')}")
-if not os.path.exists('./mlruns'):
-    print("Creating mlruns directory")
-    os.makedirs('./mlruns', exist_ok=True)
+if not os.path.exists(tracking_uri):
+    print(f"Creating mlruns directory at {tracking_uri}")
+    os.makedirs(tracking_uri, exist_ok=True)
 
 mlflow.set_experiment("iris_experiment")
 
